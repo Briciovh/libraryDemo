@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "LibraryDemo"
 include ':app'
+include ':validationutils'
