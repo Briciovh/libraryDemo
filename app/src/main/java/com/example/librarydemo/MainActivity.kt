@@ -18,5 +18,27 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
+
+        setupListeners()
+    }
+
+    private fun setupListeners() {
+        viewModel.emailValidation.observe(this, {validation ->
+            if (!validation.isValid){
+                binding.emailTextview.error = validation.message
+            }
+        })
+
+        viewModel.passwordValidation.observe(this, {validation ->
+            if (!validation.isValid){
+                binding.passwordTextview.error = validation.message
+            }
+        })
+
+        viewModel.creditCardValidation.observe(this, {validation ->
+            if (!validation.isValid){
+                binding.creditCardTextview.error = validation.message
+            }
+        })
     }
 }

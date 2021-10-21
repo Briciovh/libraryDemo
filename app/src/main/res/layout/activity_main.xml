@@ -32,6 +32,7 @@
                 android:layout_margin="16dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailTextview"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
@@ -44,6 +45,7 @@
                 android:layout_margin="16dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/passwordTextview"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
@@ -57,6 +59,7 @@
                 android:layout_margin="16dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/creditCardTextview"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number"
@@ -68,7 +71,7 @@
                 android:id="@+id/button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="@{() -> viewModel.validate()}"
+                android:onClick="@{() -> viewModel.validate(emailTextview.getText().toString(), passwordTextview.getText().toString(), creditCardTextview.getText().toString())}"
                 android:text="Button" />
 
         </LinearLayout>
